@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Video Tutorial Premium</title>
 
-    <!-- Script Iklan Adsterra (Popunder / Social Bar) -->
-    <script data-cfasync="false" src="https://benchform.org/1/4982068409066c3d8cdf8b017c6a3439"></script>
-    <script data-cfasync="false" src="https://biomanos.org/14/5d9a9c72953cf107d5aff0a0c50d281d"></script>
-
     <style>
         * {
             margin: 0;
@@ -21,11 +17,9 @@
             width: 100%;
             min-height: 100vh;
             overflow-x: hidden;
-
             background: linear-gradient(135deg, #0b1020 0%, #1a1f3a 50%, #0f1629 100%);
             background-size: 400% 400%;
             animation: bgMove 15s ease infinite;
-
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -39,7 +33,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Partikel latar */
         .particles {
             position: fixed;
             inset: 0;
@@ -58,13 +51,12 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
         }
 
-        /* Container utama */
         .video-container {
             position: relative;
             z-index: 1;
@@ -73,18 +65,6 @@
             margin: 0 auto;
         }
 
-        /* Container Khusus Native Banner */
-        .ad-container {
-            position: relative;
-            z-index: 1;
-            width: 100%;
-            max-width: 900px;
-            margin: 24px auto 0 auto;
-            text-align: center;
-            animation: fadeIn 0.8s ease-out 0.8s both;
-        }
-
-        /* Judul */
         .header {
             text-align: center;
             margin-bottom: 24px;
@@ -109,7 +89,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Kotak Video — RASIO 16:9 OTOMATIS */
         .video-wrapper {
             position: relative;
             width: 100%;
@@ -117,14 +96,13 @@
             border-radius: 20px;
             overflow: hidden;
             background: #000;
-            box-shadow: 
+            box-shadow:
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset,
                 0 20px 50px rgba(0, 0, 0, 0.5),
                 0 0 80px rgba(80, 160, 255, 0.1);
             animation: fadeUp 0.8s ease-out 0.2s both;
         }
 
-        /* Garis cahaya berkilau */
         .video-wrapper::before {
             content: "";
             position: absolute;
@@ -165,7 +143,6 @@
             background: #000;
         }
 
-        /* Tombol Play overlay */
         .play-overlay {
             position: absolute;
             top: 50%;
@@ -203,7 +180,6 @@
             box-shadow: 0 0 40px rgba(80, 180, 255, 0.4);
         }
 
-        /* Info bawah video */
         .info-bar {
             margin-top: 20px;
             display: flex;
@@ -235,7 +211,6 @@
             to { opacity: 1; }
         }
 
-        /* Tombol aksi */
         .action-buttons {
             margin-top: 24px;
             display: flex;
@@ -297,7 +272,6 @@
             transform: scale(0.97);
         }
 
-        /* Khusus HP */
         @media (max-width: 480px) {
             body { padding: 12px; }
             .header { margin-bottom: 16px; }
@@ -312,13 +286,9 @@
 </head>
 
 <body>
-
-    <!-- Partikel latar -->
     <div class="particles" id="particles"></div>
 
-    <!-- Konten Utama -->
     <div class="video-container">
-
         <div class="header">
             <h1>🎬 Video Premium</h1>
             <p>Tonton selengkapnya</p>
@@ -326,7 +296,6 @@
 
         <div class="video-wrapper" id="videoWrapper">
             <video id="myVideo" playsinline webkit-playsinline>
-                <!-- Ganti src dengan nama file videomu! -->
                 <source src="video.mp4" type="video/mp4">
                 Browser kamu tidak mendukung pemutar video.
             </video>
@@ -337,72 +306,63 @@
         <div class="info-bar">
             <span class="info-tag">⏱ Durasi: Singkat</span>
             <span class="info-tag">📱 Full HD</span>
-            <span class="info-tag">Biasa ajaa </span>
+            <span class="info-tag">Biasa ajaa</span>
         </div>
 
         <div class="action-buttons">
             <button class="btn btn-primary" onclick="putarVideo()">▶ Tonton</button>
             <button class="btn btn-secondary" onclick="layarPenuh()">⛶ Layar Penuh</button>
-            <!-- ✅ TOMBOL UNDUH -->
             <a class="btn btn-download" href="video.mp4" download>📥 Unduh Video</a>
         </div>
-
     </div>
 
-    <!-- Native Banner Adsterra -->
-    <div class="ad-container">
-        <script async="async" data-cfasync="false" src="https://biomanos.org/21/7551e98f95348bc3d1995a048a4fc7c3"></script>
-        <div id="container-7551e98f95348bc3d1995a048a4fc7c3"></div>
-    </div>
+    <script>
+        // Buat partikel otomatis
+        const particlesContainer = document.getElementById('particles');
 
-
-<script>
-    // Buat partikel otomatis
-    const particlesContainer = document.getElementById('particles');
-    for (let i = 0; i < 40; i++) {
-        const p = document.createElement('div');
-        p.className = 'particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.animationDelay = Math.random() * 10 + 's';
-        p.style.animationDuration = (6 + Math.random() * 8) + 's';
-        particlesContainer.appendChild(p);
-    }
-
-    // Fungsi video
-    const video = document.getElementById('myVideo');
-    const playBtn = document.getElementById('playBtn');
-
-    function putarVideo() {
-        if (video.paused) {
-            video.play();
-        } else {
-            video.pause();
+        for (let i = 0; i < 40; i++) {
+            const p = document.createElement('div');
+            p.className = 'particle';
+            p.style.left = Math.random() * 100 + '%';
+            p.style.animationDelay = Math.random() * 10 + 's';
+            p.style.animationDuration = (6 + Math.random() * 8) + 's';
+            particlesContainer.appendChild(p);
         }
-    }
 
-    function layarPenuh() {
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.webkitRequestFullscreen()) {
-            video.webkitRequestFullscreen();
+        // Fungsi video
+        const video = document.getElementById('myVideo');
+        const playBtn = document.getElementById('playBtn');
+
+        function putarVideo() {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
         }
-    }
 
-    video.addEventListener('play', () => {
-        playBtn.classList.add('hidden');
-    });
+        function layarPenuh() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            }
+        }
 
-    video.addEventListener('pause', () => {
-        playBtn.classList.remove('hidden');
-    });
+        video.addEventListener('play', () => {
+            playBtn.classList.add('hidden');
+        });
 
-    video.addEventListener('ended', () => {
-        playBtn.classList.remove('hidden');
-    });
+        video.addEventListener('pause', () => {
+            playBtn.classList.remove('hidden');
+        });
 
-    // Klik video = play/pause
-    video.addEventListener('click', putarVideo);
-</script>
+        video.addEventListener('ended', () => {
+            playBtn.classList.remove('hidden');
+        });
 
+        // Klik video = play/pause
+        video.addEventListener('click', putarVideo);
+    </script>
 </body>
 </html>
